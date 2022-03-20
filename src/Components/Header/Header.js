@@ -4,7 +4,7 @@ import './header.css'
 export default function Header(){
     return (
         <header>
-            <img src={logo}/>
+            <img src={logo} alt='logo'/>
             <p className='logo'>ZapRecall</p>
         </header>
     )

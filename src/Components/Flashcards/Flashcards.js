@@ -1,5 +1,4 @@
 import './flashcards.css'
-import { decks } from '../../utils/decks.js'
 import { useState } from 'react';
 import Card from '../Card/Card';
 import Header from '../Header/Header';
@@ -9,7 +8,8 @@ export default function Flashcards(props) {
     const { setStartRecall, deck, goal } = props;
     let numQuestions = deck.length
     const [answeredQuestions, setAnsweredQuestions] = useState(0);
-    console.log('flash'+answeredQuestions)
+    const [footerIcons, setFooterIcons] = useState([]);
+    console.log('flash' + answeredQuestions)
     return (
         <>
             <Header />
@@ -23,10 +23,16 @@ export default function Flashcards(props) {
                         numQuestion={index + 1}
                         setAnsweredQuestions={setAnsweredQuestions}
                         answeredQuestions={answeredQuestions}
+                        setFooterIcons={setFooterIcons}
+                        footerIcons={footerIcons}
                     />
                 })}
             </div>
-            <Footer answered={answeredQuestions} numQuestions={numQuestions}/>
+            <Footer answered={answeredQuestions}
+                numQuestions={numQuestions}
+                footerIcons={footerIcons}
+                setStartRecall={setStartRecall}
+                goal={goal} />
         </>
     )
 }
