@@ -19,9 +19,16 @@ const Card = (props) => {
             }}>
                 <h1>Pergunta {numQuestion}</h1>
             </div>
-            <div className={cssMaxCard+cssTurnCard}>
+            <div className={cssMaxCard + cssTurnCard}>
                 <div className=" front-face face">
+
                     <p className='card-text'>{answer}</p>
+                    <div className='buttons'>
+                        <button className='red'>Não lembrei</button>
+                        <button className='yellow'>Quase lembrei</button>
+                        <button className='green'>Zap!</button>
+                    </div>
+
                 </div>
                 <div className='back-face face'>
                     <p className='card-text'>{question}</p>

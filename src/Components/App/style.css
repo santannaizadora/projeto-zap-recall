@@ -18,7 +18,21 @@ body{
     height: 130px;
 }
 
-
 .hide{
     display: none;
+}
+
+.red{
+    background: #FF3030;
+
+}
+
+.yellow{
+    background: #FF922E;
+
+}
+
+.green{
+    background: #2FBE34;
+    
 }
