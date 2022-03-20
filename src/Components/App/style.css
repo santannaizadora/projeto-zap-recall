@@ -34,5 +34,18 @@ body{
 
 .green{
     background: #2FBE34;
-    
+}
+
+.red-text{
+    color: #FF3030;
+
+}
+
+.yellow-text{
+    color: #FF922E;
+
+}
+
+.green-text{
+    color: #2FBE34;
 }
