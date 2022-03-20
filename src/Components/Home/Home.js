@@ -7,19 +7,19 @@ import Flashcards from '../Flashcards/Flashcards'
 const Home = () => {
 
     const [startRecall, setStartRecall] = useState(true);
-    const [deckSelected, setDeckSelected] = useState('1');
+    const [deckSelected, setDeckSelected] = useState('2');
     const [zapsGoal, setZapsGoal] = useState(1);
     //const [startRecall, setStartRecall] = useState(false);
     //const [deckSelected, setDeckSelected] = useState(undefined);
     //const [zapsGoal, setZapsGoal] = useState();
 
     const Start = () => {
-        let decksName = [ { value: '', label: 'Escolha seu deck' } ];
+        let decksName = [{ value: '', label: 'Escolha seu deck' }];
         decks.forEach(deck => {
-            decksName.push( { value: deck.id, label: deck.deckName } )
+            decksName.push({ value: deck.id, label: deck.deckName })
         });
 
-        let enableButton = (deckSelected && zapsGoal <= decks.find( item => item.id === deckSelected).cards.length && zapsGoal > 0) ? true : false
+        let enableButton = (deckSelected && zapsGoal <= decks.find(item => item.id === deckSelected).cards.length && zapsGoal > 0) ? true : false
         return (
             <div className="home">
                 <img className='logo-img' src={logo} alt='logo zap recall' />
@@ -28,7 +28,7 @@ const Home = () => {
                 <select value={deckSelected} className='select' onChange={event => setDeckSelected(event.target.value)}>
                     {decksName.map((item, index) => <option key={index} value={item.value}> {item.label} </option>)}
                 </select>
-                { deckSelected ? deckSelected.deckName : '' }
+                {deckSelected ? deckSelected.deckName : ''}
                 <input
                     value={zapsGoal}
                     disabled={!deckSelected}
@@ -60,9 +60,13 @@ const Home = () => {
     let deck = deckCards.sort(shuffle)
 
     return (
-        startRecall ? <Flashcards setStartRecall={setStartRecall}
-        deck={deck}
-        goal={zapsGoal} /> : <Start />
+        startRecall
+            ?
+            <Flashcards setStartRecall={setStartRecall}
+                deck={deck}
+                goal={zapsGoal} />
+            :
+            <Start />
     )
 }
 

@@ -24,12 +24,22 @@ const Card = (props) => {
 
                     <p className='card-text'>{answer}</p>
                     <div className='buttons'>
-                        <button className='red' onClick={() => {
-                            setAnsweredQuestions(answeredQuestions + 1);
-                            console.log('card' + answeredQuestions)
-                        }}>Não lembrei</button>
-                        <button className='yellow'>Quase lembrei</button>
-                        <button className='green'>Zap!</button>
+                        <button
+                            className='red'
+                            onClick={() => {
+                                setAnsweredQuestions(answeredQuestions + 1);
+                            }}
+                        >Não lembrei</button>
+                        <button className='yellow'
+                            onClick={() => {
+                                setAnsweredQuestions(answeredQuestions + 1);
+                            }}
+                        >Quase lembrei</button>
+                        <button className='green'
+                            onClick={() => {
+                                setAnsweredQuestions(answeredQuestions + 1);
+                            }}
+                        >Zap!</button>
                     </div>
 
                 </div>

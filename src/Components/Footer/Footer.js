@@ -1,10 +1,11 @@
 import './footer.css'
 
-export default function Footer() {
+export default function Footer(props) {
+    const {answered, numQuestions} = props
     return (
 
         <footer>
-            <p>0/0 CONCLUÍDOS</p>
+            <p>{answered}/{numQuestions} CONCLUÍDOS</p>
         </footer>
 
     )

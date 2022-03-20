@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 
 export default function Flashcards(props) {
     const { setStartRecall, deck, goal } = props;
+    let numQuestions = deck.length
     const [answeredQuestions, setAnsweredQuestions] = useState(0);
     console.log('flash'+answeredQuestions)
     return (
@@ -25,7 +26,7 @@ export default function Flashcards(props) {
                     />
                 })}
             </div>
-            <Footer />
+            <Footer answered={answeredQuestions} numQuestions={numQuestions}/>
         </>
     )
 }
