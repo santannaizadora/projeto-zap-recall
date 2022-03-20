@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 153px;
+    padding-bottom: 70px;
 }
 .question{
     display: flex;
