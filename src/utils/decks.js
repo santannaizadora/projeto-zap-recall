@@ -21,7 +21,7 @@ const decks = [
             },
             {
                 question: "O ReactDOM nos ajuda __",
-                answer: "nteragindo com a DOM para colocar componentes React na mesma"
+                answer: "Interagindo com a DOM para colocar componentes React na mesma"
             },
             {
                 question: "Usamos o npm para __",

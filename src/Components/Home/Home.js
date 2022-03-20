@@ -1,12 +1,17 @@
+import './home.css'
 import { useState } from 'react';
 import { decks } from '../../utils/decks.js'
-import './home.css'
 import logo from '../../assets/img/logo.png'
+import Flashcards from '../Flashcards/Flashcards'
 
 const Home = () => {
-    const [startRecall, setStartRecall] = useState(false);
-    const [deckSelected, setDeckSelected] = useState(undefined);
-    const [zapsGoal, setZapsGoal] = useState();
+
+    const [startRecall, setStartRecall] = useState(true);
+    const [deckSelected, setDeckSelected] = useState('1');
+    const [zapsGoal, setZapsGoal] = useState(1);
+    //const [startRecall, setStartRecall] = useState(false);
+    //const [deckSelected, setDeckSelected] = useState(undefined);
+    //const [zapsGoal, setZapsGoal] = useState();
 
     const Start = () => {
         let decksName = [ { value: '', label: 'Escolha seu deck' } ];
@@ -36,9 +41,8 @@ const Home = () => {
 
                 {enableButton
                     ?
-                    <button className='button-able' onClick={() => {
+                    <button id='start' className='button-able' onClick={() => {
                         setStartRecall(true)
-                        console.log(deckSelected, zapsGoal)
                     }}
                     >Iniciar Recall!</button>
                     :
@@ -50,7 +54,9 @@ const Home = () => {
     }
 
     return (
-        startRecall ? <Start /> : <Start />
+        startRecall ? <Flashcards setStartRecall={setStartRecall}
+        deckSelected={deckSelected}
+        goal={zapsGoal} /> : <Start />
     )
 }
 

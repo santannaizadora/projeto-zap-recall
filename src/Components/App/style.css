@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: #FB6B6B;
     font-family: 'Recursive', sans-serif;
@@ -6,10 +10,15 @@ body{
 .logo{
     font-family: 'Righteous', cursive;
     color: #FFFFFF;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .logo-img{
     width: 110px;
     height: 130px;
+}
+
+
+.hide{
+    display: none;
 }
