@@ -7,7 +7,7 @@ const Card = (props) => {
     const [cardSelected, setCardSelected] = useState(false);
     const [turnedCard, setTurnedCard] = useState(false);
     const [answeredCard, setAnsweredCard] = useState(false);
-    const { question, answer, numQuestion } = props
+    const { question, answer, numQuestion, setAnsweredQuestions, answeredQuestions } = props
 
     const cssMaxCard = `card ${cardSelected ? "" : "hide"}`;
     const cssMinCard = `question ${(cardSelected || turnedCard) ? "hide" : ""}`;
@@ -24,7 +24,10 @@ const Card = (props) => {
 
                     <p className='card-text'>{answer}</p>
                     <div className='buttons'>
-                        <button className='red'>Não lembrei</button>
+                        <button className='red' onClick={() => {
+                            setAnsweredQuestions(answeredQuestions + 1);
+                            console.log('card' + answeredQuestions)
+                        }}>Não lembrei</button>
                         <button className='yellow'>Quase lembrei</button>
                         <button className='green'>Zap!</button>
                     </div>

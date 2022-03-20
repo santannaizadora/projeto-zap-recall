@@ -53,9 +53,15 @@ const Home = () => {
         )
     }
 
+    const shuffle = () => {
+        return Math.random() - 0.5;
+    }
+    let deckCards = decks.find(deck => deck.id === deckSelected).cards
+    let deck = deckCards.sort(shuffle)
+
     return (
         startRecall ? <Flashcards setStartRecall={setStartRecall}
-        deckSelected={deckSelected}
+        deck={deck}
         goal={zapsGoal} /> : <Start />
     )
 }
