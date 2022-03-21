@@ -60,7 +60,9 @@ const Home = () => {
             ?
             <Flashcards setStartRecall={setStartRecall}
                 deck={deck}
-                goal={zapsGoal} />
+                goal={zapsGoal}
+                setZapsGoal={setZapsGoal}
+                setDeckSelected={setDeckSelected} />
             :
             <Start />
     )

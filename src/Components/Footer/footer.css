@@ -31,3 +31,12 @@ footer{
     margin-bottom: 14px;
     width: 222px;
 }
+
+.restart{
+    width: 167px;
+    height: 32px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    border: none;
+    margin-top: 8px;
+}

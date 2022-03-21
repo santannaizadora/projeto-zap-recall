@@ -5,12 +5,12 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 export default function Flashcards(props) {
-    const { setStartRecall, deck, goal } = props;
+    const { setStartRecall, deck, goal, setDeckSelected, setZapsGoal } = props;
     let numQuestions = deck.length
     const [answeredQuestions, setAnsweredQuestions] = useState(0);
     const [footerIcons, setFooterIcons] = useState([]);
     const [zaps, setZaps] = useState(0);
-    
+
     return (
         <>
             <Header />
@@ -36,7 +36,9 @@ export default function Flashcards(props) {
                 footerIcons={footerIcons}
                 setStartRecall={setStartRecall}
                 zaps={zaps}
-                goal={goal} />
+                goal={goal}
+                setZapsGoal={setZapsGoal}
+                setDeckSelected={setDeckSelected} />
         </>
     )
 }
