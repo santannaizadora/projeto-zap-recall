@@ -81,3 +81,13 @@
 .answered{
     text-decoration: line-through;
 }
+
+@media (min-width: 1000px){
+    .card{
+        width: 567.12px;
+    }
+
+    .card-text{
+        width: 500px;
+    }
+}

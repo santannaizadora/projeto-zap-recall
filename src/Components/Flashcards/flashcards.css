@@ -24,3 +24,9 @@
 ion-icon{
     font-size: 30px;
 }
+
+@media (min-width: 1000px){
+    .question{
+        width: 567.12px;
+    }
+}
