@@ -6,12 +6,9 @@ import Flashcards from '../Flashcards/Flashcards'
 
 const Home = () => {
 
-    const [startRecall, setStartRecall] = useState(true);
-    const [deckSelected, setDeckSelected] = useState('2');
-    const [zapsGoal, setZapsGoal] = useState(1);
-    //const [startRecall, setStartRecall] = useState(false);
-    //const [deckSelected, setDeckSelected] = useState(undefined);
-    //const [zapsGoal, setZapsGoal] = useState();
+    const [startRecall, setStartRecall] = useState(false);
+    const [deckSelected, setDeckSelected] = useState(undefined);
+    const [zapsGoal, setZapsGoal] = useState();
 
     const Start = () => {
         let decksName = [{ value: '', label: 'Escolha seu deck' }];
@@ -56,8 +53,7 @@ const Home = () => {
     const shuffle = () => {
         return Math.random() - 0.5;
     }
-    let deckCards = decks.find(deck => deck.id === deckSelected).cards
-    let deck = deckCards.sort(shuffle)
+    let deck = deckSelected? decks.find(deck => deck.id === deckSelected).cards.sort(shuffle):{}
 
     return (
         startRecall

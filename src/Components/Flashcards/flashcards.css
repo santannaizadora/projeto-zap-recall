@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 153px;
-    padding-bottom: 70px;
+    margin-bottom: 170px;
 }
 .question{
     display: flex;
@@ -21,6 +21,6 @@
     border-radius: 5px;
 }
 
-.question ion-icon{
+ion-icon{
     font-size: 30px;
 }

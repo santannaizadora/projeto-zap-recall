@@ -9,7 +9,8 @@ export default function Flashcards(props) {
     let numQuestions = deck.length
     const [answeredQuestions, setAnsweredQuestions] = useState(0);
     const [footerIcons, setFooterIcons] = useState([]);
-    console.log('flash' + answeredQuestions)
+    const [zaps, setZaps] = useState(0);
+    
     return (
         <>
             <Header />
@@ -25,6 +26,8 @@ export default function Flashcards(props) {
                         answeredQuestions={answeredQuestions}
                         setFooterIcons={setFooterIcons}
                         footerIcons={footerIcons}
+                        zaps={zaps}
+                        setZaps={setZaps}
                     />
                 })}
             </div>
@@ -32,6 +35,7 @@ export default function Flashcards(props) {
                 numQuestions={numQuestions}
                 footerIcons={footerIcons}
                 setStartRecall={setStartRecall}
+                zaps={zaps}
                 goal={goal} />
         </>
     )

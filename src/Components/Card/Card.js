@@ -11,7 +11,7 @@ const Card = (props) => {
     const [questionIcon, setQuestionIcon] = useState(icons[0])
     const [cssColor, setCssColor] = useState(false);
 
-    const { question, answer, numQuestion, setAnsweredQuestions, answeredQuestions, setFooterIcons, footerIcons } = props
+    const { question, answer, numQuestion, setAnsweredQuestions, answeredQuestions, setFooterIcons, footerIcons, zaps, setZaps } = props
 
     const cssMaxCard = `card ${cardSelected ? "" : "hide"}`;
     const cssMinCard = `question ${(cardSelected || turnedCard) ? "hide" : ""}`;
@@ -19,7 +19,6 @@ const Card = (props) => {
 
     const handleClick = (index) => {
         setAnsweredQuestions(answeredQuestions + 1);
-        setFooterIcons([...footerIcons, icons[index]])
         setIsAnsweredCard(true)
         setQuestionIcon(icons[index])
         let color = ''
@@ -29,9 +28,10 @@ const Card = (props) => {
             color = 'yellow-text'
         } else {
             color = 'green-text'
+            setZaps(zaps+1)
         }
-
         setCssColor(color)
+        setFooterIcons([...footerIcons, {name: icons[index], color: color}])
     }
 
     return (
